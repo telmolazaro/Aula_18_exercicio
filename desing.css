@@ -1,0 +1,66 @@
+.container {
+  height: 100vh;
+  display: grid;
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+      " header"
+      "content "
+      "signup  "
+      "feature"
+      "feature1"
+      "feature2";
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "content content"
+      "signup feature"
+      "feature1 feature2";
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "header header header"
+      "feature feature1 feature2"
+      "signup signup signup"
+      "content content content";
+  }
+}
+header {
+  grid-area: header;
+  background-color: rgb(46, 218, 248);
+}
+main {
+  grid-area: content;
+  background-color: rgb(235, 225, 225);
+}
+section {
+  grid-area: signup;
+  background-color: rgb(171, 216, 236);
+}
+aside {
+  grid-area: feature1;
+  background-color: rgb(216, 74, 64);
+}
+span {
+  grid-area: feature;
+  background-color: rgb(216, 163, 64);
+}
+footer {
+  grid-area: feature2;
+  background-color: rgb(138, 138, 209);
+}
+div > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
